@@ -36,7 +36,7 @@ Ownership type: Revealed the segments of ownership of Iowa licensed insurance co
 
 Presence of Iowa licensed Insurance companies: Provided insight on Iowa licensed companies not operating in Iowa, allowing review of strategy and objective to increase presence and operation of Iow based insurance companies in Iowa.
 
-Insurance company type: Identified there were more insurance company types in Iowa than in non-Iowa docimicied area. This highlighted potential for insurance company growth in Iowa with the right strategies and  
+Insurance company type: Identified there were more insurance company types in Iowa than in non-Iowa domiciled area. This highlighted potential for insurance company growth in Iowa with the right strategies.  
 
 
 
