@@ -46,9 +46,9 @@ Insurance company type: Identified there were more insurance company types in Io
 
 # Project 2
 
-**Title**:Football data code
+**Title**: HR system and projects
 
-**SQL Code**:
+**SQL Code**: 
 
 **SQL Skills Used**:
 
@@ -61,7 +61,7 @@ Data Filtering (WHERE, BETWEEN, IN, AND): Applied filters to select relevant dat
 Data Source Specification (FROM): Specified the tables used as data sources for retrieval
 
 
-**Project Description**:
+**Project Description**: The project highlights the relationship between employee, project and location have bearing on the salary of employees.
 
 **Technology used: SQL server**
 
