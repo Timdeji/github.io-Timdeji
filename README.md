@@ -41,7 +41,7 @@ Insurance company type: Identified there were more insurance company types in Io
 
 
 **Dashboard Overview**:
-[Iowa and Non-Iowa based insurance dashboard](https://github.com/Timdeji/github.io-Timdeji/blob/main/Iowa%20and%20Non-Iowa%20based%20insurance%20dashboard.png)
+![Iowa and Non-Iowa based insurance dashboard](https://github.com/Timdeji/github.io-Timdeji/blob/main/Iowa%20and%20Non-Iowa%20based%20insurance%20dashboard.png)
 
 
 # Project 2
