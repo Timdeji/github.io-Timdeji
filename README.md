@@ -48,7 +48,7 @@ Insurance company type: Identified there were more insurance company types in Io
 
 **Title**: HR system and projects
 
-**SQL Code**: (HR and projects)
+**SQL Code**: [HR and projects](https://github.com/Timdeji/github.io-Timdeji/blob/main/HR%20and%20projects)
 
 **SQL Skills Used**:
 
