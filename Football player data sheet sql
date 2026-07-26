@@ -1,0 +1,268 @@
+---
+
+--1	Write a query to find all the players in the "Arizona" team.
+
+SELECT *
+FROM [dbo].['Football Players Data$']
+WHERE [Team] = 'Arizona'
+
+
+--2	Write a query to find all the players who play as a "WR" (Wide Receiver).
+
+SELECT *
+FROM [dbo].['Football Players Data$']
+WHERE [Pos] = 'WR'
+
+--3	Write a query to list all players taller than 6 feet 2 inches.
+
+SELECT *
+FROM [dbo].['Football Players Data$']
+WHERE [Ht] = '6-2'
+
+--4	Write a query to find all players who attended the "Washington" college.
+
+SELECT *
+FROM [dbo].['Football Players Data$']
+WHERE [College] = 'Washington'
+
+--5	Write a query to list players who are 25 years old or younger.
+
+SELECT *
+FROM [dbo].['Football Players Data$']
+WHERE [Age] <= '25'
+
+
+--6	Write a query to find all players with missing Age data.
+
+SELECT *
+FROM [dbo].['Football Players Data$']
+WHERE [Age] = 'N/A'
+
+--7	Write a query to find players who are rookies (Exp = 'R').
+
+SELECT *
+FROM [dbo].['Football Players Data$']
+WHERE [Exp] = 'R'
+
+--8	Write a query to find the tallest player on the "New Orleans" team.
+
+SELECT TOP(5)
+	  [Year]
+	  ,[Team]
+	  ,[NAME ]
+	  ,[No#]
+	  ,[Pos]
+	  ,[Ht]
+	  ,[Wt]
+	  ,[Age]
+	  ,[Exp]
+	  ,[College]
+	  ,[FirstName]
+	  ,[LastName]
+	  ,[Ft]
+	  ,[In]
+	  ,[Inches]
+	  ,[NumGrp]
+FROM [dbo].['Football Players Data$']
+WHERE [Team] = 'New Orleans'
+ORDER BY [Ht] DESC
+
+
+
+--9	Write a query to find players weighing more than 250 pounds.
+
+SELECT *
+FROM [dbo].['Football Players Data$']
+WHERE [Wt] > 250
+
+--10 Write a query to calculate the average height of players at each position.
+
+SELECT [Pos]
+      ,round(AVG([Inches]),2) AS Average
+FROM [dbo].['Football Players Data$']
+GROUP BY [Pos]
+ORDER BY Average desc
+
+
+
+--11 Write a query to find the heaviest player for each position.
+
+With wt_rank AS
+
+(
+SELECT *,
+RANK() OVER(PARTITION BY [Pos] ORDER BY [Wt] DESC) AS Rank_Weight
+FROM [dbo].['Football Players Data$']
+  )
+
+ SELECT *
+ FROM wt_rank
+ WHERE Rank_Weight = '1'
+
+
+
+--12 Write a query to rank players by age within their team. If two players have the same age, rank them by their weight.
+
+SELECT *,
+CASE 
+WHEN [Age] != [Age] THEN RANK() OVER(PARTITION BY [Team] ORDER BY [Age] desc) ELSE RANK() OVER(PARTITION BY [Team] ORDER BY [Wt] desc) END AS rank_
+FROM [dbo].['Football Players Data$']
+
+
+--13 Write a query to calculate the average height (in inches) for all players older than 25 years.
+
+SELECT COUNT(*) AS Total_players
+       ,ROUND(AVG([Inches]),2) AS Average
+FROM [dbo].['Football Players Data$']
+WHERE [Age] > '25'
+
+--14 Wite a query to find all players whose height is greater than the average height of their 
+----respective team.
+
+SELECT [Team]
+       ,[NAME ]
+	   ,[No#]
+	   ,[Pos]
+	   ,[Age]
+	   ,[Wt]
+	   ,[FirstName]
+	   ,[LastName]
+	   ,[Inches]
+	   ,Average_Team_Height
+FROM (
+  SELECT [Team]
+       ,[NAME ]
+	   ,[No#]
+	   ,[Pos]
+	   ,[Age]
+	   ,[Wt]
+	   ,[FirstName]
+	   ,[LastName]
+	   ,[Inches]
+,AVG([Inches]) OVER(PARTITION BY [Team]) AS Average_Team_Height
+FROM [dbo].['Football Players Data$']
+            ) AS Subquery
+WHERE [Inches] > Average_Team_Height
+
+--15 Write a query to find all players who share the same last name.
+
+
+wITH cte AS
+  (
+SELECT *,
+COUNT(*) OVER(PARTITION BY [LastName]) AS total_dupl
+FROM [dbo].['Football Players Data$']
+     )
+	
+	SELECT *
+	FROM cte
+	WHERE total_dupl >1
+
+
+
+
+--16 Write a query to find the players with the minimum height for each position.
+
+WITH cte AS
+  (
+SELECT *
+,RANK() OVER(PARTITION BY [Pos] ORDER BY [Inches]) AS Height_rank
+FROM [dbo].['Football Players Data$']
+    )
+
+SELECT *
+FROM cte
+WHERE Height_rank = '1'
+
+
+--17 Write a query to get the number of players for each team grouped by their experience level.
+
+SELECT [Team]
+       ,[Exp]
+       ,count([NAME ]) AS No_of_players
+FROM [dbo].['Football Players Data$']
+GROUP BY [Team],[Exp]
+ORDER BY [Team],[Exp]
+
+
+
+--18 Write a query to find the tallest and shortest players from each college.
+
+
+WITH cte AS
+  (
+SELECT *
+,Row_number() OVER(PARTITION BY [College] ORDER BY [Inches] DESC) AS tallest_rank
+,Row_number() OVER(PARTITION BY [College] ORDER BY [Inches] ASC) AS shortest_rank
+FROM [dbo].['Football Players Data$']
+      )
+
+SELECT 
+      [College]
+	 ,[NAME ]
+     ,[Inches]
+      ,CASE
+	  WHEN tallest_rank = '1' THEN 'Tallest'
+	  WHEN shortest_rank = '1' THEN 'Shortest'
+	  END AS 'Category'
+FROM cte
+WHERE tallest_rank = '1' OR shortest_rank = '1'
+ORDER BY [College]
+
+
+--19 Write a query to find all players whose weight is above the average weight for their respective position.
+
+SELECT [Year]
+       ,[Team]
+	   ,[NAME ]
+	   ,[No#]
+	   ,[Pos]
+	   ,[Ht]
+	   ,[Wt]
+	   ,[Age]
+	   ,[Exp]
+	   ,[College]
+	   ,[FirstName]
+	   ,[LastName]
+	   ,[Ft]
+	   ,[In]
+	   ,[Inches]
+	   ,[NumGrp]
+	   ,Average_teamweight
+FROM 
+    (SELECT [Year]
+       ,[Team]
+	   ,[NAME ]
+	   ,[No#]
+	   ,[Pos]
+	   ,[Ht]
+	   ,[Wt]
+	   ,[Age]
+	   ,[Exp]
+	   ,[College]
+	   ,[FirstName]
+	   ,[LastName]
+	   ,[Ft]
+	   ,[In]
+	   ,[Inches]
+	   ,[NumGrp]
+	   ,AVG([Wt]) OVER(PARTITION BY [Pos]) AS Average_teamweight
+FROM [dbo].['Football Players Data$']
+       ) AS Subquery
+WHERE [Wt] > Average_teamweight
+
+
+--20 Write a query to calculate the percentage of players in each position for every team.
+
+
+WITH cte AS
+   (
+SELECT *
+,COUNT([NAME ]) OVER(PARTITION BY [Pos]) AS no_in_a_position
+,COUNT([NAME ]) OVER(PARTITION BY [Team]) AS no_in_a_team
+FROM [dbo].['Football Players Data$']
+    )
+SELECT distinct [Team]
+       ,[Pos]
+,100*(no_in_a_position) / (no_in_a_team) AS Player_percentage
+FROM cte
