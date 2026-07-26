@@ -82,12 +82,11 @@ Data Filtering (WHERE, BETWEEN, IN, AND): Applied filters to select relevant dat
 
 Data Source Specification (FROM): Specified the tables used as data sources for retrieval
 
-Window Function (Rank, Row_Number,AVG) : 
+Window Function (Rank, Row_Number,AVG): Used to aggregate records and obtain data for specified team, position and other player attributes. 
 
-Subqueries
+Subqueries: Used to complete queries 
 
-
-**Project Description**: The project spotlights relationship between player attributes and overall team performance.
+**Project Description**: The project spotlights relationship between player attributes and overall team performance. This helps in determining areas that require immediate and urgent attention within the team.
 
 **Technology used: SQL server**
 
