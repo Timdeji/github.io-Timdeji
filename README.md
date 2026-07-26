@@ -70,7 +70,7 @@ Data Source Specification (FROM): Specified the tables used as data sources for 
 
 **Title**: Football Players Data
 
-**SQL Code**:
+**SQL Code**: [Football player Data Sheet sql](https://github.com/Timdeji/github.io-Timdeji/blob/main/Football%20player%20data%20sheet%20sql)
 
 **SQL Skills Used**:
 
