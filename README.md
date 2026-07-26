@@ -92,6 +92,33 @@ Subqueries: Used to complete queries
 
 
 
+# Project 4
+
+**Title**: Workplace Safety Data
+
+**SQL Code**: 
+
+**SQL Skills Used**:
+
+Data Retrieval (SELECT): Queried and extracted specific information from the database.
+
+Data Aggregation (SUM, COUNT): Calculated totals, such as incident type and incident cost, and counted records to analyze data trends.
+
+Data Filtering (WHERE, BETWEEN, IN, AND): Applied filters to select relevant data, including filtering by ranges and lists.
+
+Data Source Specification (FROM): Specified the tables used as data sources for retrieval.
+
+Window Function (Rank, Row_Number,AVG): Used to aggregate records and obtain data for specified plants, departments, incident types and days lost.
+
+Subqueries: Used to complete queries. 
+
+**Project Description**: The project spotlights relationship between player attributes and overall team performance. This helps in determining areas that require immediate and urgent attention within the team.
+
+**Technology used: SQL server**
+
+
+
+
 
 
 
