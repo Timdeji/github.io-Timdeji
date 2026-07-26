@@ -54,19 +54,42 @@ Insurance company type: Identified there were more insurance company types in Io
 
 Data Retrieval (SELECT): Queried and extracted specific information from the database.
 
-Data Aggregation (SUM, COUNT): Calculated totals, such as sales and quantities, and counted records to analyze data trends.
+Data Aggregation (SUM, COUNT): Calculated totals and counted records to analyze data trends.
 
 Data Filtering (WHERE, BETWEEN, IN, AND): Applied filters to select relevant data, including filtering by ranges and lists.
 
 Data Source Specification (FROM): Specified the tables used as data sources for retrieval
 
 
-**Project Description**: The project highlights the relationship between employee, project and location have bearing on the salary of employees.
+**Project Description**: The project highlights the relationship between employee, project and location having bearing on employees salary.
 
 **Technology used: SQL server**
 
 
+# Project 3
 
+**Title**: Football Players Data
+
+**SQL Code**:
+
+**SQL Skills Used**:
+
+Data Retrieval (SELECT): Queried and extracted specific information from the database.
+
+Data Aggregation (SUM, COUNT): Calculated totals, such as teams and players, and counted records to analyze data trends.
+
+Data Filtering (WHERE, BETWEEN, IN, AND): Applied filters to select relevant data, including filtering by ranges and lists.
+
+Data Source Specification (FROM): Specified the tables used as data sources for retrieval
+
+Window Function (Rank, Row_Number,AVG) : 
+
+Subqueries
+
+
+**Project Description**: The project spotlights relationship between player attributes and overall team performance.
+
+**Technology used: SQL server**
 
 
 
