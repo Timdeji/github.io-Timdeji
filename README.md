@@ -98,7 +98,7 @@ Subqueries: Used to complete queries
 
 **SQL Code**: 
 
-**SQL Skills Used**:
+**SQL Skills Used**: [Workplace Safety Data](https://github.com/Timdeji/github.io-Timdeji/blob/main/Workplace%20Safety%20Data%20sql%20sheet)
 
 Data Retrieval (SELECT): Queried and extracted specific information from the database.
 
