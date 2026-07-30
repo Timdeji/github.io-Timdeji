@@ -90,8 +90,10 @@ This dashboard serves as a crucial tool for the global superstore providing clea
 
 
 
-**Dashboard Overview**: [Global Superstore financial report 2023](https://github.com/Timdeji/github.io-Timdeji/blob/main/Global%20Superstore%20finacial%20report%202023%20.png)
-                         [Global Superstore financial report 2023](https://github.com/Timdeji/github.io-Timdeji/blob/main/Global%20Superstore%20financial%20%202023%20.png) 
+**Dashboard Overview**: ![Global Superstore financial report 2023](https://github.com/Timdeji/github.io-Timdeji/blob/main/Global%20Superstore%20finacial%20report%202023%20.png)
+                        
+      
+ ![Global Superstore financial report 2023](https://github.com/Timdeji/github.io-Timdeji/blob/main/Global%20Superstore%20financial%20%202023%20.png) 
 
 
 
