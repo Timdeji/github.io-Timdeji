@@ -150,9 +150,9 @@ Subqueries: Used to complete queries
 
 **Title**: Workplace Safety Data
 
-**SQL Code**: 
+**SQL Code**: [Workplace Safety Data](https://github.com/Timdeji/github.io-Timdeji/blob/main/Workplace%20Safety%20Data%20sql%20sheet)
 
-**SQL Skills Used**: [Workplace Safety Data](https://github.com/Timdeji/github.io-Timdeji/blob/main/Workplace%20Safety%20Data%20sql%20sheet)
+**SQL Skills Used**: 
 
 Data Retrieval (SELECT): Queried and extracted specific information from the database.
 
