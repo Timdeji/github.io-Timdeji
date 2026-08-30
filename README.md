@@ -18,6 +18,7 @@
 
 
 **SQL Code**: [The Gym Performance sql](https://github.com/Timdeji/github.io-Timdeji/blob/main/The%20Gym%20performance%20sql)
+              ![The Gym Performance sql](https://github.com/Timdeji/github.io-Timdeji/blob/main/The%20Gym%20performance%20sql)
 
 **Dashboard Overview**:
 [The Gym Performance Power BI dashboard](https://github.com/Timdeji/github.io-Timdeji/blob/main/The%20Gym%20Performance%20Power%20BI%20dashboard.png)
