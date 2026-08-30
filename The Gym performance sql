@@ -1,0 +1,126 @@
+
+----1. How many female customers used the gym
+
+SELECT COUNT(*) AS Female_customers
+FROM [dbo].[gym_membership$]
+WHERE [gender] = 'Female' 
+
+----2. How many female customers used the gym
+
+SELECT COUNT(*) AS Male_customers
+FROM [dbo].[gym_membership$]
+WHERE [gender] = 'Male' 
+
+
+---3. Calculate the percentage of male and female customers
+
+SELECT [gender]
+,COUNT([gender]) as Total
+,100 * COUNT([gender])/(SELECT COUNT(*) FROM [dbo].[gym_membership$]) AS GenderPercentage
+FROM [dbo].[gym_membership$]
+GROUP BY [gender]
+
+
+OR
+
+SELECT 100 * SUM(CASE WHEN [gender] = 'Male' then 1 else 0 end)/COUNT(*) AS male_percent,
+       100 * SUM(CASE WHEN [gender] = 'Female' then 1 else 0 end)/COUNT(*) AS female_percent
+FROM [dbo].[gym_membership$]
+
+
+
+---4. Determine bottom 5 customers that least visited the gym 
+
+With rankedtable AS
+ (
+SELECT *
+,RANK() OVER (ORDER BY [visit_per_week]) AS Ranking
+FROM [dbo].[gym_membership$]
+  )
+
+SELECT Top(5) *
+FROM rankedtable
+WHERE Ranking = '1'
+
+
+OR
+
+  SELECT TOP(5) *
+  FROM [dbo].[gym_membership$]
+  ORDER BY [visit_per_week] asc
+
+
+---5.Determine top 5 customer that most visited the gym
+
+  SELECT TOP(5) *
+  FROM [dbo].[gym_membership$]
+  ORDER BY [visit_per_week] desc
+
+
+ ---6.Details of customers that had personal training
+
+ SELECT *
+ FROM [dbo].[gym_membership$]
+ WHERE [personal_training] = 'TRUE'
+
+ ---7.Number of customers by gender that had and did no have personal training.
+
+ SELECT [gender]
+       ,COUNT([gender]) as Customers_with_personaltraining
+ FROM [dbo].[gym_membership$]
+ WHERE [personal_training] = '1'
+ GROUP BY [gender]
+
+
+ SELECT [gender]
+       ,COUNT([gender]) as Customers_without_personaltraining
+ FROM [dbo].[gym_membership$]
+ WHERE [personal_training] = '0'
+ GROUP BY [gender]
+
+
+
+ ---7.Percentage of customers that had and did not have drinks
+
+ SELECT [gender]
+,100 * SUM(CASE WHEN [drink_abo] = '1' THEN 1 ELSE 0 END)/COUNT(*) AS Percent_drink
+,100 * sum(CASE WHEN [drink_abo] = '0' THEN 1 ELSE 0 END)/COUNT(*) AS Percent_notdrink
+ FROM [dbo].[gym_membership$]
+ GROUP BY [gender]
+
+
+ ---8.Number and percentage of customer with or without subscription
+
+SELECT [gender]
+,count([gender]) AS Total_customers
+,100 * SUM(CASE WHEN [abonoment_type] = 'Premium' THEN 1 ELSE 0 END)/COUNT(*) AS Premium_Percent
+,100 * SUM(CASE WHEN [abonoment_type] = 'Standard' THEN 1 ELSE 0 END)/COUNT(*) AS Standard_Percent
+ FROM [dbo].[gym_membership$]
+ GROUP BY [gender]
+
+
+
+ ---9.Number and percentage of customer that had and did not attend group lesson
+
+  SELECT [gender]
+  ,count([gender]) AS Total_customers
+,100 * SUM(CASE WHEN [attend_group_lesson] = '1' THEN 1 ELSE 0 END)/COUNT(*) AS Percent_attendgrouplesson
+,100 * sum(CASE WHEN [attend_group_lesson] = '0' THEN 1 ELSE 0 END)/COUNT(*) AS Percent_notattendgrouplesson
+ FROM [dbo].[gym_membership$]
+ GROUP BY [gender]
+
+
+ ---10.Top 10 customers by age with the highest average time in gym
+
+
+ SELECT TOP(10) *
+ FROM [dbo].[gym_membership$]
+ ORDER BY [avg_time_in_gym] desc
+ 
+
+
+ ---11.Top 10 customers by age with the lowest average time in gym
+
+  SELECT TOP(10) *
+ FROM [dbo].[gym_membership$]
+ ORDER BY [avg_time_in_gym] asc
