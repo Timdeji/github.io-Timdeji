@@ -1,6 +1,39 @@
 # Data Analytics Project
 
+
 # Project 1
+
+**Title**:[The Gym performance Dashboard](https://github.com/Timdeji/github.io-Timdeji/blob/main/Gym%20performance%20dashboard.xlsx)
+
+**Tools Used**: Microsoft excel, Pivot table, Charts, SQL, Power BI, DAX
+
+**Project Description**:
+
+
+
+
+**Key findings**:
+
+  
+
+
+**SQL Code**: [The Gym Performance sql](https://github.com/Timdeji/github.io-Timdeji/blob/main/The%20Gym%20performance%20sql)
+
+**Dashboard Overview**:
+[The Gym Performance Power BI dashboard](https://github.com/Timdeji/github.io-Timdeji/blob/main/The%20Gym%20Performance%20Power%20BI%20dashboard.png)
+
+
+[The Gym Performance Excel dashboard](https://github.com/Timdeji/github.io-Timdeji/blob/main/The%20Gym%20Performance%20Excel%20Dashboard.png)
+
+
+
+
+
+
+
+
+
+# Project 2
 
 **Title**:[Iowa and Non-Iowa based insurance dashboard](https://github.com/Timdeji/github.io-Timdeji/blob/main/insurance_companies_licensed_in_iowa_667_rows.csv.xlsx)
 
@@ -44,7 +77,7 @@ Insurance company type: Identified there were more insurance company types in Io
 
 
 
-# Project 2
+# Project 3
 
 **Title**:[Global superstore power BI dashboard](https://github.com/Timdeji/github.io-Timdeji/blob/main/Global%20superstore%20poer%20BI%20dashboard.pbix) 
 
@@ -98,7 +131,7 @@ This dashboard serves as a crucial tool for the global superstore providing clea
 
 
 
-# Project 3
+# Project 4
 
 **Title**: HR system and projects
 
@@ -120,7 +153,7 @@ Data Source Specification (FROM): Specified the tables used as data sources for 
 **Technology used: SQL server**
 
 
-# Project 4
+# Project 5
 
 **Title**: Football Players Data
 
@@ -146,7 +179,7 @@ Subqueries: Used to complete queries
 
 
 
-# Project 5
+# Project 6
 
 **Title**: Workplace Safety Data
 
