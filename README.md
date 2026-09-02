@@ -7,7 +7,33 @@
 
 **Tools Used**: Microsoft excel, Pivot table, Charts, SQL, Power BI, DAX
 
-**Project Description**:
+**Project Description**: This project provides insight on how and what services gym users accessed. This dashboard would enable stakeholders to track the performance of the gym through subscription, lessons, personal training, time spent in gym and sauna usage. This dashboard includes the following features:
+
+Number of visits by the day of the week:
+
+Number of customers by gender and personal training:
+
+Total customer by Gender: 
+
+Number of lessons by group lessons type:
+
+Top 10 customers by Age:
+
+Number of visits by customer gender:
+
+Sauna usage by customer gender:
+
+Number of customer by Personal trainer:
+
+Total customer by Average time in Gym: 
+
+Subscription type by customer gender:
+
+Number of customers by drink: 
+
+Number of customers by weekly visits:
+
+
 
 
 
